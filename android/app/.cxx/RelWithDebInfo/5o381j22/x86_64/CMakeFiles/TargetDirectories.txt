@@ -1,0 +1,2 @@
+D:/Projects/chattingapp/android/app/.cxx/RelWithDebInfo/5o381j22/x86_64/CMakeFiles/edit_cache.dir
+D:/Projects/chattingapp/android/app/.cxx/RelWithDebInfo/5o381j22/x86_64/CMakeFiles/rebuild_cache.dir

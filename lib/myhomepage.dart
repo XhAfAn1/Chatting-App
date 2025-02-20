@@ -1,4 +1,5 @@
 
+import 'package:chattingapp/data/firebaseauth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -71,10 +72,13 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             MaterialButton(
               onPressed: () async{
-                SharedPreferences sp = await SharedPreferences.getInstance();
-                sp.setBool(KEYLOGIN, false);
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const login()));
+
+                Authentication().signout(context);
+
+                // SharedPreferences sp = await SharedPreferences.getInstance();
+                // sp.setBool(KEYLOGIN, false);
+                // Navigator.pushReplacement(context,
+                //     MaterialPageRoute(builder: (context) => const login()));
               },
               child: const Text('logout'),
               color: Colors.blue,
@@ -82,6 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
               minWidth: 300,
               height: 40,
             ),
+
           ],
         ),
       ),
