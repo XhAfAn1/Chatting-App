@@ -1,4 +1,5 @@
 import 'package:chattingapp/data/sharedpref.dart';
+import 'package:chattingapp/homePage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -38,7 +39,7 @@ class Authentication {
       await Future.delayed(Duration(seconds: 1));
       SharedPreferences sp = await SharedPreferences.getInstance();
       sp.setBool(KEYLOGIN, true);
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>const MyHomePage(),));
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>const homepage(),));
 
     } on FirebaseAuthException catch (e){
       if(e.code=='user-not-found'){
