@@ -2,16 +2,25 @@ import 'package:chattingapp/data/sharedpref.dart';
 import 'package:chattingapp/login.dart';
 import 'package:chattingapp/wheretogo.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 
-
-import 'fetch_data.dart';
-import 'insert_data.dart';
-import 'myhomepage.dart';
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  if(kIsWeb){
+    Firebase.initializeApp(options: FirebaseOptions(
+        apiKey: "AIzaSyAMsySvvF3CuLOg9qfAIbPbIRsvo5hRJqI",
+        authDomain: "chatting-app-e6f54.firebaseapp.com",
+        databaseURL: "https://chatting-app-e6f54-default-rtdb.firebaseio.com",
+        projectId: "chatting-app-e6f54",
+        storageBucket: "chatting-app-e6f54.firebasestorage.app",
+        messagingSenderId: "35836615837",
+        appId: "1:35836615837:web:9aeaaff171a13c38408874",
+        measurementId: "G-M87N2LSKZ8"
+    ));
+
+  }else
   Firebase.initializeApp();
   runApp(const MyApp());
 }

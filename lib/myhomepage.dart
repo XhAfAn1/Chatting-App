@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'data/sharedpref.dart';
 import 'fetch_data.dart';
+import 'homePage.dart';
 import 'insert_data.dart';
 import 'login.dart';
 
@@ -86,6 +87,9 @@ class _MyHomePageState extends State<MyHomePage> {
               minWidth: 300,
               height: 40,
             ),
+            ElevatedButton(onPressed: (){
+              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>const homepage(),));
+            }, child: Text("test page")),
 
           ],
         ),
